@@ -13,10 +13,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    <!-- Mobile Header - Now visible and functional -->
+    <header class="mobile-header">
+        <div class="container">
+            <div class="mobile-header-content">
+                <div class="mobile-logo">
+                    <img src="./img/header.jpg" alt="Sudish Karki" class="mobile-profile-img">
+                    <h1>Sudish Karki</h1>
+                </div>
+                <div class="mobile-controls">
+                    <button class="theme-toggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-toggle" title="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Dark Overlay -->
     <div class="overlay"></div>
@@ -26,6 +41,9 @@
         <div class="sidebar-header">
             <img src="./img/header.jpg" alt="Sudish Karki" class="profile-img">
             <h1 class="profile-name">Sudish Karki</h1>
+            <button class="theme-toggle desktop-theme-toggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
 
         <ul class="nav-menu">
@@ -37,7 +55,7 @@
             <li><a href="#certificates"><i class="fas fa-certificate"></i>Certificates</a></li>
             <li><a href="#contact"><i class="far fa-envelope"></i>Contact</a></li>
             <li class="nav-divider"></li>
-            <li><a href="https://drive.google.com/file/d/1G6_WpSPmIpdXDwe6Tc2soAlJjuWJihPT/view?usp=drive_link" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
+            <li><a href="https://drive.google.com/file/d/1WfvMwNA0hy8QyrjIMeff8VEHyWh3WYvO/view?usp=sharing" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
         </ul>
 
         <div class="social-icons-bottom">
@@ -48,20 +66,6 @@
         </div>
         <p class="copyright-text">© 2024 Sudish Karki</p>
     </nav>
-
-    <!-- Sidebar Open Button -->
-    <button class="sidebar-open">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Header for mobile - Empty as requested -->
-    <header class="mobile-header">
-        <div class="container">
-            <div class="mobile-header-content">
-                <!-- Content removed as requested -->
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -83,8 +87,10 @@
                             <a href="mailto:sudishkarki360@gmail.com"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
-                    <div class="hero-image">
-                        <img src="img/me.jpg" alt="Sudish Karki">
+                    <div class="hero-images">
+                        <div class="image-container">
+                            <img src="./img/me.jpg" alt="Sudish Karki Professional Photo" class="hero-img" id="heroImage">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,7 +136,7 @@
                                 <span class="info-value">Nepali, Hindi, English</span>
                             </div>
                         </div>
-                        <a href="https://drive.google.com/file/d/1G6_WpSPmIpdXDwe6Tc2soAlJjuWJihPT/view?usp=drive_link" download class="btn primary-btn">Download CV</a>
+                        <a href="https://drive.google.com/file/d/1WfvMwNA0hy8QyrjIMeff8VEHyWh3WYvO/view?usp=sharing" target="_blank" class="btn primary-btn cv-btn">Download CV</a>
                     </div>
                 </div>
             </div>
@@ -144,32 +150,35 @@
                     <div class="underline"></div>
                 </div>
                 <div class="skills-content">
-                    
                     <div class="technical-skills">
-    <h3>Technical Skills</h3>
-    <div class="skill-cards">
-        <div class="skill-card">
-            <i class="fab fa-html5"></i>
-            <h4>HTML</h4>
-        </div>
-        <div class="skill-card">
-            <i class="fab fa-css3-alt"></i>
-            <h4>CSS</h4>
-        </div>
-        <div class="skill-card">
-            <i class="fab fa-js"></i>
-            <h4>JavaScript</h4>
-        </div>
-        <div class="skill-card">
-            <i class="fab fa-python"></i>
-            <h4>Python</h4>
-        </div>
-        <div class="skill-card">
-            <i class="fab fa-django"></i>
-            <h4>Django</h4>
-        </div>
-    </div>
-</div>
+                        <h3>Technical Skills</h3>
+                        <div class="skill-cards">
+                            <div class="skill-card">
+                                <i class="fab fa-html5"></i>
+                                <h4>HTML</h4>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-css3-alt"></i>
+                                <h4>CSS</h4>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-js"></i>
+                                <h4>JavaScript</h4>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-python"></i>
+                                <h4>Python</h4>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-django"></i>
+                                <h4>Django</h4>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fas fa-database"></i>
+                                <h4>MySQL</h4>
+                            </div>
+                        </div>
+                    </div>
                     <div class="soft-skills">
                         <h3>Soft Skills</h3>
                         <div class="skill-cards">
@@ -238,6 +247,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>BRJ Furniture Store Management System</h3>
+                            <p>Created a Python program to manage furniture stock and transactions using a text file. It updates inventory based on sales or orders and generates receipts with transaction details. Tools Used: Python, File Handling, DateTime</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Sudish165/BRJ-Furniture-Store" class="btn small-btn"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-note">
                     <p>Some projects are not yet fully uploaded to GitHub. Uploading soon.</p>
@@ -248,8 +266,8 @@
         <!-- Education Section -->
         <section id="education" class="education">
             <div class="container">
-                <div class="section-header">
-                    <h2>Education</h2>
+                <div class="section-header cute-header">
+                    <h2>✨ Education ✨</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="education-grid">
@@ -317,8 +335,8 @@
         <!-- Certificates Section -->
         <section id="certificates" class="certificates">
             <div class="container">
-                <div class="section-header">
-                    <h2>Certificates</h2>
+                <div class="section-header cute-header">
+                    <h2>🏆 Certificates 🏆</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="certificates-grid">
@@ -395,25 +413,16 @@
             <div class="container">
                 <div class="feedback-container">
                     <div class="feedback-content">
-                        <img src="/img/tom.png" alt="Tom" class="tom-image">
+                        <img src="./img/tom.png" alt="Tom" class="tom-image">
                         <h2>Your Feedback Matters!</h2>
                         <p>Help me improve by sharing your thoughts and suggestions.</p>
                         <a href="https://docs.google.com/forms/d/1YpDRk2NGXgEbrEFaEVjjIROV5lgzwrJWU3PkpsA62Aw/edit" target="_blank" class="feedback-btn">Give Feedback</a>
-                        <img src="/img/jerry.png" alt="Jerry" class="jerry-image">
+                        <img src="./img/jerry.png" alt="Jerry" class="jerry-image">
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Footer - Empty as requested
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                Content removed as requested 
-            </div>
-        </div>
-    </footer> -->
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top">
