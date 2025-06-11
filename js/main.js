@@ -1,5 +1,51 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // Dark Mode Toggle Functionality
+  const themeToggleButtons = document.querySelectorAll(".theme-toggle")
+
+  // Check for saved theme preference or use device preference
+  const savedTheme = localStorage.getItem("theme")
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+  // Set initial theme
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.body.classList.add("dark-mode")
+    themeToggleButtons.forEach((button) => {
+      const icon = button.querySelector("i")
+      if (icon) {
+        icon.classList.replace("fa-moon", "fa-sun")
+      }
+    })
+  }
+
+  // Toggle theme function
+  function toggleTheme() {
+    if (document.body.classList.contains("dark-mode")) {
+      document.body.classList.remove("dark-mode")
+      localStorage.setItem("theme", "light")
+      themeToggleButtons.forEach((button) => {
+        const icon = button.querySelector("i")
+        if (icon) {
+          icon.classList.replace("fa-sun", "fa-moon")
+        }
+      })
+    } else {
+      document.body.classList.add("dark-mode")
+      localStorage.setItem("theme", "dark")
+      themeToggleButtons.forEach((button) => {
+        const icon = button.querySelector("i")
+        if (icon) {
+          icon.classList.replace("fa-moon", "fa-sun")
+        }
+      })
+    }
+  }
+
+  // Add click event to all theme toggle buttons
+  themeToggleButtons.forEach((button) => {
+    button.addEventListener("click", toggleTheme)
+  })
+
   // Mobile Navigation Toggle
   const hamburger = document.querySelector(".hamburger")
   const navLinks = document.querySelector(".nav-links")
@@ -221,4 +267,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Run on window resize
   window.addEventListener("resize", checkWindowSize)
+
+  // Photo Loop System - Large Single Image
+  const heroImage = document.getElementById("heroImage")
+
+  // Array of image sources
+  const imageSources = ["./img/me.jpg", "./img/mee.jpg", "./img/mee.jpg"]
+
+  let currentImageIndex = 0
+  let photoLoopInterval
+
+  function switchToNextImage() {
+    // Move to next image
+    currentImageIndex = (currentImageIndex + 1) % imageSources.length
+
+    // Update image with smooth transition
+    if (heroImage) {
+      // Add fade out effect
+      heroImage.style.opacity = "0"
+
+      setTimeout(() => {
+        // Change the image source
+        heroImage.src = imageSources[currentImageIndex]
+
+        // Fade back in
+        heroImage.style.opacity = "1"
+      }, 400) // Half of the transition time
+    }
+  }
+
+  // Start the photo loop if we have multiple images
+  if (imageSources.length > 1 && heroImage) {
+    // Switch image every 4 seconds
+    photoLoopInterval = setInterval(switchToNextImage, 3500)
+
+    // Pause on hover
+    const imageContainer = document.querySelector(".image-container")
+    if (imageContainer) {
+      imageContainer.addEventListener("mouseenter", () => {
+        clearInterval(photoLoopInterval)
+      })
+
+      imageContainer.addEventListener("mouseleave", () => {
+        photoLoopInterval = setInterval(switchToNextImage, 3500)
+      })
+    }
+  }
 })
