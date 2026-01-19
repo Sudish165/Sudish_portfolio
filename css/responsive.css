@@ -1,0 +1,200 @@
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-img {
+    width: 400px;
+    height: 520px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .hero-images {
+    margin-bottom: 40px;
+  }
+
+  .hero-img {
+    width: 350px;
+    height: 450px;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+
+  /* Sidebar mobile styles */
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 1001;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .mobile-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .mobile-header {
+    display: block;
+  }
+
+  .mobile-header .container {
+    padding: 15px;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-left {
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile sidebar adjustments */
+  .sidebar {
+    width: 250px;
+  }
+
+  .mobile-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .hero-img {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+  }
+
+  .personal-info {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    gap: 30px;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Smaller sidebar for very small screens */
+  .sidebar {
+    width: 230px;
+  }
+
+  .hero-img {
+    width: 280px;
+    height: 380px;
+  }
+}
