@@ -214,3 +214,33 @@
     height: 380px;
   }
 }
+
+/* ============================================================
+   Hero redesign overrides (reference-style layout)
+   Ensures legacy responsive rules don't affect the new hero.
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+  .hero-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-frame {
+    width: min(520px, 100%) !important;
+  }
+
+  .hero-img {
+    width: 100% !important;
+    height: 520px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    padding-top: 110px !important;
+  }
+
+  .hero-img {
+    height: 420px !important;
+  }
+}

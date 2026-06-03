@@ -11,135 +11,154 @@
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Mobile Header - Now visible and functional -->
-    <header class="mobile-header">
-        <div class="container">
-            <div class="mobile-header-content">
-                <div class="mobile-logo">
-                    <img src="./img/header.jpg" alt="Sudish Karki" class="mobile-profile-img">
-                    <h1>Sudish Karki</h1>
-                </div>
-                <div class="mobile-controls">
-                    <button class="theme-toggle" title="Toggle Dark Mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="mobile-toggle" title="Open Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+    <!-- Minimal Top Bar (matches reference style) -->
+    <header class="topbar" role="banner">
+        <div class="container topbar-inner">
+            <div class="topbar-left">
+                <a class="topbar-brand" href="#home" aria-label="Go to home">
+                    <span class="topbar-brand-text">Sudish</span>
+                    <span class="topbar-brand-mark" aria-hidden="true"></span>
+                </a>
+                <div class="topbar-email">sudishkarki360@gmail.com</div>
             </div>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- Dark Overlay -->
-    <div class="overlay"></div>
-
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <img src="./img/header.jpg" alt="Sudish Karki" class="profile-img">
-            <h1 class="profile-name">Sudish Karki</h1>
-            <button class="theme-toggle desktop-theme-toggle" title="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-
-        <ul class="nav-menu">
-            <li><a href="#home" class="active"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#about"><i class="far fa-user"></i>About</a></li>
-            <li><a href="#skills"><i class="fas fa-code"></i>Skills</a></li>
-            <li><a href="#projects"><i class="far fa-folder-open"></i>Projects</a></li>
-            <li><a href="#education"><i class="fas fa-graduation-cap"></i>Education</a></li>
-            <li><a href="#certificates"><i class="fas fa-certificate"></i>Certificates</a></li>
-            <li><a href="#contact"><i class="far fa-envelope"></i>Contact</a></li>
-            <li class="nav-divider"></li>
-            <li><a href="https://drive.google.com/file/d/1G6_WpSPmIpdXDwe6Tc2soAlJjuWJihPT/view?usp=drive_link" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
-        </ul>
-
-        <div class="social-icons-bottom">
-            <a href="https://github.com/Sudish165" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/sudishkarki_10/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/1BmN46QxFy/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/sudish-karki-b50563339/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <p class="copyright-text">© 2024 Sudish Karki</p>
-    </nav>
-
-    <!-- Animated Particle Background -->
-    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+    <!-- Fullscreen Menu -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+        <button class="menu-close" id="menuClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="menu-links" aria-label="Fullscreen navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+            <a href="https://drive.google.com/file/d/1G6_WpSPmIpdXDwe6Tc2soAlJjuWJihPT/view?usp=drive_link" target="_blank">Download CV</a>
+        </nav>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Hi, I'm <span id="typing-text">Sudish Karki</span></h1>
-                        <h2 class="fade-in-delay">Computing Student & Web Developer</h2>
-                        <p class="fade-in-delay-2">A highly motivated IT student with a passion for web development and graphic design.</p>
-                        <div class="hero-btns">
-                            <a href="#contact" class="btn primary-btn">Contact Me</a>
-                            <a href="#projects" class="btn secondary-btn">View Projects</a>
+                <div class="hero-layout">
+                    <!-- LEFT -->
+                    <div class="hero-left">
+                        <h1 class="hero-headline">
+                            Hi,<br>
+                            I'm<br>
+                            <span class="hero-accent">Sudish</span>
+                        </h1>
+                        <p class="hero-subtitle">Software Engineer &amp; Full-Stack Developer</p>
+                        <p class="hero-desc">Building modern web applications with React, Django, PostgreSQL, and real-world deployment experience.</p>
+
+                        <div class="hero-actions">
+                            <a href="#contact" class="btn hero-btn hero-hire-btn">Hire Me <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="social-icons">
-                            <a href="https://github.com/Sudish165" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/sudish-karki-b50563339/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:sudishkarki360@gmail.com"><i class="fas fa-envelope"></i></a>
+
+                        <div class="hero-social-vertical" aria-label="Social links">
+                            <a href="https://github.com/Sudish165" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/sudish-karki-b50563339/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:sudishkarki360@gmail.com" class="social-accent" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
-                    <div class="hero-images">
-                        <div class="image-container">
+
+                    <!-- CENTER -->
+                    <div class="hero-center">
+                        <div class="hero-frame hero-frame-plain">
                             <img src="./img/me.jpg" alt="Sudish Karki Professional Photo" class="hero-img" id="heroImage">
                         </div>
+                        <div class="hero-circles" aria-hidden="true">
+                            <span class="circle circle-cyan"></span>
+                            <span class="circle circle-pink"></span>
+                            <span class="circle-dot"></span>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="hero-right">
+                        <div class="hero-kicker">BASED IN NEPAL</div>
+                        <h2 class="hero-right-title">Building Digital<br>Products That Make<br>an Impact</h2>
+                        <p class="hero-right-desc">Passionate about problem-solving, clean code, backend development, and creating meaningful digital solutions.</p>
+                        <a href="https://drive.google.com/file/d/1G6_WpSPmIpdXDwe6Tc2soAlJjuWJihPT/view?usp=drive_link" target="_blank" class="btn hero-btn hero-download-btn">Download CV <i class="fas fa-arrow-down"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="fade-in" id="about" class="about">
+        <section id="about" class="about">
             <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                    <div class="underline"></div>
+                <div class="about-header">
+                    <div class="about-tag"><span class="about-tag-dot"></span>ABOUT ME</div>
+                    <h2 class="about-title">Building solutions, solving problems,<br>and creating <span class="about-accent">impact.</span></h2>
+                    <div class="about-underline" aria-hidden="true"></div>
+                    <p class="about-paragraph">I am a recent BSc (Hons) Computing graduate from Itahari International College with a strong interest in full-stack web development and software engineering. My project work mainly focuses on building practical web applications using React for frontend development, Django for backend APIs, and PostgreSQL for database management. I have experience developing and deploying real-world projects with clean UI, responsive design, REST API integration, and database-driven features. I am passionate about problem-solving, continuous learning, and creating useful digital solutions.</p>
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I am a recent BSc (Hons) Computing graduate from Itahari International College with a strong interest in full-stack web development and software engineering. My project work mainly focuses on building practical web applications using React for frontend development, Django for backend APIs, and PostgreSQL for database management. I have experience developing and deploying real-world projects with clean UI, responsive design, REST API integration, and database-driven features. I am passionate about problem-solving, continuous learning, and creating useful digital solutions.</p>
-                        <div class="personal-info">
-                            <div class="info-item">
-                                <span class="info-title">Name:</span>
-                                <span class="info-value">Sudish Karki</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-title">Date of Birth:</span>
-                                <span class="info-value">June 29, 2004</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-title">Age:</span>
-                                <span class="info-value">22 Years</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-title">Email:</span>
-                                <span class="info-value">sudishkarki360@gmail.com</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-title">Phone:</span>
-                                <span class="info-value">+9779820305703</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-title">Location:</span>
-                                <span class="info-value">Inaruwa-2, Nepal</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-title">Languages:</span>
-                                <span class="info-value">Nepali, Hindi, English</span>
-                            </div>
+
+                <div class="about-cards">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-user"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Name</div>
+                            <div class="info-value">Sudish Karki</div>
                         </div>
-                        <a href="https://drive.google.com/file/d/1G6_WpSPmIpdXDwe6Tc2soAlJjuWJihPT/view?usp=drive_link" target="_blank" class="btn primary-btn cv-btn">Download CV</a>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Date of Birth</div>
+                            <div class="info-value">June 29, 2004</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-hourglass-half"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Age</div>
+                            <div class="info-value">22 Years</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Email</div>
+                            <div class="info-value">sudishkarki360@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Phone</div>
+                            <div class="info-value">+9779820305703</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Location</div>
+                            <div class="info-value">Inaruwa-2, Nepal</div>
+                        </div>
+                    </div>
+                    <div class="info-item wide">
+                        <div class="info-icon"><i class="fas fa-globe"></i></div>
+                        <div class="info-text">
+                            <div class="info-title">Languages</div>
+                            <div class="info-value">Nepali, Hindi, English</div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,88 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================================================
+  // 2026 Redesign: Top navbar interactions (minimal + clean)
+  // - Keeps subtle hover effects only (no particle/typing loops)
+  // =========================================================
+
+  const topbar = document.querySelector(".topbar")
+  const menuBtn = document.getElementById("menuBtn")
+  const menuOverlay = document.getElementById("menuOverlay")
+  const menuClose = document.getElementById("menuClose")
+
+  const headerOffset = () => (topbar ? topbar.offsetHeight + 12 : 80)
+
+  function openMenu() {
+    if (!menuOverlay || !menuBtn) return
+    menuOverlay.classList.add("active")
+    document.body.classList.add("menu-open")
+    menuOverlay.setAttribute("aria-hidden", "false")
+    menuBtn.setAttribute("aria-expanded", "true")
+  }
+
+  function closeMenu() {
+    if (!menuOverlay || !menuBtn) return
+    menuOverlay.classList.remove("active")
+    document.body.classList.remove("menu-open")
+    menuOverlay.setAttribute("aria-hidden", "true")
+    menuBtn.setAttribute("aria-expanded", "false")
+  }
+
+  if (menuBtn) menuBtn.addEventListener("click", openMenu)
+  if (menuClose) menuClose.addEventListener("click", closeMenu)
+
+  // Close on ESC / background click
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu()
+  })
+
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", (e) => {
+      if (e.target === menuOverlay) closeMenu()
+    })
+
+    // Smooth scroll for menu links + close menu
+    menuOverlay.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const href = a.getAttribute("href") || ""
+        const target = document.querySelector(href)
+        if (!target) return
+        e.preventDefault()
+        closeMenu()
+        window.scrollTo({
+          top: target.offsetTop - headerOffset(),
+          behavior: "smooth",
+        })
+      })
+    })
+
+    // Close menu when clicking external links (e.g., Download CV)
+    menuOverlay.querySelectorAll('a[href^="http"], a[target="_blank"]').forEach((a) => {
+      a.addEventListener("click", () => closeMenu())
+    })
+  }
+
+  // Back to top button (keep functionality)
+  const backToTopButton = document.querySelector(".back-to-top")
+  if (backToTopButton) {
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.pageYOffset > 300) backToTopButton.classList.add("active")
+        else backToTopButton.classList.remove("active")
+      },
+      { passive: true },
+    )
+
+    backToTopButton.addEventListener("click", (e) => {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+  }
+
+  // Stop the legacy script below from running (sidebar + particles + typing + scroll-reveal)
+  return
+
   // Dark Mode Toggle Functionality
   const themeToggleButtons = document.querySelectorAll(".theme-toggle")
 
