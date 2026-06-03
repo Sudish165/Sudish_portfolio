@@ -28,8 +28,31 @@ document.addEventListener("DOMContentLoaded", () => {
     menuBtn.setAttribute("aria-expanded", "false")
   }
 
-  if (menuBtn) menuBtn.addEventListener("click", openMenu)
-  if (menuClose) menuClose.addEventListener("click", closeMenu)
+  function toggleMenu() {
+    if (menuOverlay && menuOverlay.classList.contains("active")) {
+      closeMenu()
+    } else {
+      openMenu()
+    }
+  }
+
+  // Hamburger button click - toggle menu
+  if (menuBtn) {
+    menuBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      toggleMenu()
+    })
+  }
+
+  // Close button click
+  if (menuClose) {
+    menuClose.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      closeMenu()
+    })
+  }
 
   // Close on ESC / background click
   window.addEventListener("keydown", (e) => {

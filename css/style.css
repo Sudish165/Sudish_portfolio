@@ -3,34 +3,34 @@
    ============================================ */
 
 :root {
-  --primary-color: #a18cd1; /* Soft purple */
-  --secondary-color: #fbc2eb; /* Soft pink */
-  --dark-color: #212529;
+  --primary-color: #ff3366; /* Red/Pink accent */
+  --secondary-color: #ff6b9d; /* Light pink */
+  --dark-color: #0d0d0d;
   --light-color: #fff;
   --success-color: #28a745;
   --danger-color: #dc3545;
-  --text-color: #333;
-  --bg-color: #fff;
-  --card-bg: #fff;
-  --border-color: #e9ecef;
-  --shadow-color: rgba(161, 140, 209, 0.1);
+  --text-color: #e4e6ea;
+  --bg-color: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --border-color: #2a2a2a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
   --transition: all 0.3s ease;
   --section-padding: 80px 0;
-  --header-bg: #fff;
-  --footer-bg: #9178c9; /* Softer purple that matches the theme */
+  --header-bg: #1a1a1a;
+  --footer-bg: #ff3366;
   --footer-text: #fff;
-  --nav-link-hover: #fbc2eb;
-  --light-blue: #87ceeb; /* Light blue for CV button active state */
+  --nav-link-hover: #ff6b9d;
+  --light-blue: #87ceeb;
 }
 
-/* Dark mode variables */
+/* Dark mode variables - now same as light mode */
 body.dark-mode {
   --text-color: #e4e6ea;
-  --bg-color: #18191a;
-  --card-bg: #242526;
-  --border-color: #3a3b3c;
+  --bg-color: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --border-color: #2a2a2a;
   --shadow-color: rgba(0, 0, 0, 0.3);
-  --header-bg: #242526;
+  --header-bg: #1a1a1a;
 }
 
 /* Reset & Base */
@@ -51,6 +51,7 @@ body {
   background-color: var(--bg-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  background-image: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
 }
 
 /* Particle Canvas Background */
@@ -873,12 +874,12 @@ img {
 .skills {
   padding: 60px 0;
   margin: 0;
-  background-color: var(--light-color);
+  background-color: var(--bg-color);
   position: relative;
 }
 
 .dark-mode .skills {
-  background-color: var(--card-bg);
+  background-color: var(--bg-color);
 }
 
 .skills-content {
@@ -1058,20 +1059,21 @@ img {
   margin-top: 24px;
   text-align: center;
   font-size: 1.08rem;
-  color: #90c6e0;
-  background: #f8fbff;
+  color: var(--secondary-color);
+  background: var(--card-bg);
   border-radius: 8px;
   padding: 14px 18px;
-  box-shadow: 0 2px 8px rgba(120, 144, 156, 0.07);
+  box-shadow: 0 2px 8px var(--shadow-color);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid var(--border-color);
 }
 
 .dark-mode .project-note {
-  background: #181a1b;
-  color: #b3e0ef;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  background: var(--card-bg);
+  color: var(--secondary-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 /* ============================================
@@ -1357,25 +1359,25 @@ img {
 
 .contact-left h2 {
   font-size: 2.5rem;
-  color: #a18cd1;
+  color: var(--primary-color);
   margin-bottom: 2rem;
   font-weight: 700;
 }
 
 .contact-info {
-  background-color: #a18cd1;
+  background-color: var(--primary-color);
   padding: 2rem;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: 0 10px 30px rgba(161, 140, 209, 0.3);
+  box-shadow: 0 10px 30px var(--shadow-color);
   transition: var(--transition);
 }
 
 .contact-info:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(161, 140, 209, 0.4);
+  box-shadow: 0 15px 40px var(--shadow-color);
 }
 
 .contact-item {
@@ -1433,7 +1435,7 @@ img {
 
 .social-links a:hover {
   background: #fff;
-  color: #a18cd1;
+  color: var(--primary-color);
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1441,7 +1443,7 @@ img {
 .direct-message-btn {
   display: inline-block;
   background: #fff;
-  color: #a18cd1;
+  color: var(--primary-color);
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   margin-top: 1rem;
@@ -1454,10 +1456,10 @@ img {
 }
 
 .direct-message-btn:hover {
-  background: #fbc2eb;
+  background: var(--secondary-color);
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(251, 194, 235, 0.4);
+  box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 /* ============================================
@@ -1557,7 +1559,7 @@ img {
   right: 30px;
   width: 45px;
   height: 45px;
-  background-color: #a18cd1;
+  background-color: var(--primary-color);
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -1578,9 +1580,9 @@ img {
 }
 
 .back-to-top:hover {
-  background-color: #fbc2eb;
+  background-color: var(--secondary-color);
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 6px 20px rgba(251, 194, 235, 0.4);
+  box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 /* ============================================
@@ -1721,22 +1723,21 @@ img {
 
 /* ============================================
    2026 PORTFOLIO REDESIGN (TOP NAV + DARK PREMIUM)
-   - Original design inspired by reference image (not copied)
-   - Keeps existing sections/content/links while updating layout
+   - Dark theme with red/pink accents
    ============================================ */
 
 :root {
-  --primary-color: #7c5cff; /* premium violet */
-  --secondary-color: #22d3ee; /* modern cyan accent */
-  --text-color: #e8eaf0;
-  --bg-color: #070a12;
-  --card-bg: rgba(255, 255, 255, 0.06);
-  --border-color: rgba(255, 255, 255, 0.12);
-  --shadow-color: rgba(0, 0, 0, 0.45);
-  --header-bg: rgba(10, 12, 18, 0.62);
-  --footer-bg: #070a12;
-  --footer-text: #b8c1d6;
-  --nav-link-hover: rgba(34, 211, 238, 0.18);
+  --primary-color: #ff3366; /* Red/Pink accent */
+  --secondary-color: #ff6b9d; /* Light pink */
+  --text-color: #e4e6ea;
+  --bg-color: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --border-color: #2a2a2a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --header-bg: #1a1a1a;
+  --footer-bg: #ff3366;
+  --footer-text: #fff;
+  --nav-link-hover: rgba(255, 51, 102, 0.18);
 }
 
 body {
@@ -1927,7 +1928,7 @@ body {
 }
 
 .hero-accent {
-  color: #ff5c7a; /* original accent (not copying reference) */
+  color: #ff3366; /* Red/Pink accent */
 }
 
 .hero-role {
@@ -2011,7 +2012,7 @@ body {
 .decor-circle {
   position: absolute;
   border-radius: 999px;
-  border: 3px solid rgba(34, 211, 238, 0.8);
+  border: 3px solid rgba(255, 51, 102, 0.8);
   width: 62px;
   height: 62px;
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.5));
@@ -2025,7 +2026,7 @@ body {
 .decor-2 {
   right: 20px;
   top: 18px;
-  border-color: rgba(255, 92, 122, 0.8);
+  border-color: rgba(255, 107, 157, 0.8);
   width: 34px;
   height: 34px;
 }
@@ -2037,82 +2038,42 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: rgba(34, 211, 238, 0.9);
-}
-
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 12px;
+  background: rgba(255, 51, 102, 0.9);
 }
 
 .hero-mini {
-  color: rgba(255, 92, 122, 0.85);
+  color: rgba(255, 51, 102, 0.85);
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.hero-location {
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 650;
-  margin: 0;
-}
-
-.hero-summary {
-  color: rgba(232, 234, 240, 0.75);
-  line-height: 1.6;
-  max-width: 40ch;
-}
-
 .hero-download {
   margin-top: 6px;
-  color: rgba(255, 92, 122, 0.95);
+  color: rgba(255, 51, 102, 0.95);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding-bottom: 4px;
-  border-bottom: 1px solid rgba(255, 92, 122, 0.4);
+  border-bottom: 1px solid rgba(255, 51, 102, 0.4);
 }
 
 .hero-download:hover {
   color: #fff;
-  border-bottom-color: rgba(34, 211, 238, 0.6);
-}
-
-.hero-social-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hero-social-vertical a {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(232, 234, 240, 0.78);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: var(--transition);
+  border-bottom-color: rgba(255, 107, 157, 0.6);
 }
 
 .hero-social-vertical a:hover {
   color: #fff;
   transform: translateY(-2px);
-  background: rgba(124, 92, 255, 0.16);
+  background: rgba(255, 51, 102, 0.16);
 }
 
 /* Buttons: keep existing classes but make them premium */
 .primary-btn {
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.95), rgba(34, 211, 238, 0.85));
-  color: #071018;
+  background: linear-gradient(135deg, rgba(255, 51, 102, 0.95), rgba(255, 107, 157, 0.85));
+  color: #fff;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -2247,55 +2208,55 @@ section[id] {
 
 /* Dark-theme fixes for a few hard-coded light elements */
 .project-note {
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: rgba(232, 234, 240, 0.82) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--card-bg) !important;
+  color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color);
 }
 
 .direct-message-btn {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 51, 102, 0.15) !important;
+  color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color);
   box-shadow: none !important;
 }
 
 .direct-message-btn:hover {
-  background: rgba(34, 211, 238, 0.14) !important;
+  background: rgba(255, 51, 102, 0.25) !important;
   transform: translateY(-2px);
 }
 
 .social-links a {
-  border-color: rgba(255, 255, 255, 0.35) !important;
+  border-color: var(--border-color) !important;
 }
 
 .social-links a:hover {
-  background: rgba(124, 92, 255, 0.22) !important;
+  background: rgba(255, 51, 102, 0.15) !important;
   color: #fff !important;
 }
 
 /* ============================================================
-   HERO + TOP BAR (REFERENCE-MATCH REDESIGN)
+   HERO + TOP BAR (DARK PREMIUM)
    - Minimal top bar + fullscreen menu
-   - Premium black background, neon accents
+   - Dark background with red/pink accents
    - Keeps your content/photo/links
    ============================================================ */
 
 :root {
-  --primary-color: #ff5c7a; /* accent (pink/red) */
-  --secondary-color: #22d3ee; /* neon cyan */
-  --bg-color: #050507;
-  --text-color: #e8eaf0;
-  --card-bg: rgba(255, 255, 255, 0.06);
-  --border-color: rgba(255, 255, 255, 0.12);
-  --shadow-color: rgba(0, 0, 0, 0.55);
-  --header-bg: rgba(0, 0, 0, 0.32);
+  --primary-color: #ff3366; /* Red/Pink accent */
+  --secondary-color: #ff6b9d; /* Light pink */
+  --bg-color: #0d0d0d;
+  --text-color: #e4e6ea;
+  --card-bg: #1a1a1a;
+  --border-color: #2a2a2a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --header-bg: #1a1a1a;
   --transition: all 0.25s ease;
 }
 
 body {
   background: var(--bg-color) !important;
   color: var(--text-color) !important;
-  background-image: none !important; /* remove extra gradients */
+  background-image: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%) !important;
 }
 
 /* Remove previous full navigation header from view (now replaced by topbar) */
@@ -2355,7 +2316,7 @@ body {
   top: 2px;
   width: 8px;
   height: 2px;
-  background: #ff7a2a; /* small warm accent like reference */
+  background: #ff3366; /* Red/Pink accent */
   border-radius: 2px;
 }
 
@@ -2391,6 +2352,7 @@ body {
   gap: 6px;
   padding: 12px;
   transition: var(--transition);
+  position: relative;
 }
 
 .menu-btn:hover {
@@ -2404,6 +2366,20 @@ body {
   background: rgba(255, 255, 255, 0.92);
   margin: 0;
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when menu is open */
+body.menu-open .menu-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+body.menu-open .menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+body.menu-open .menu-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Fullscreen menu */
@@ -2411,14 +2387,14 @@ body {
   position: fixed;
   inset: 0;
   z-index: 1400;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(16px);
+  background: rgba(13, 13, 13, 0.98);
+  backdrop-filter: blur(12px);
   display: grid;
   place-items: center;
   padding: 32px 18px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.4s ease;
 }
 
 .menu-overlay.active {
@@ -2435,14 +2411,19 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
-  color: rgba(232, 234, 240, 0.95);
+  color: #ff3366;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-close:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+  background: rgba(255, 51, 102, 0.1);
+  border-color: rgba(255, 51, 102, 0.3);
 }
 
 .menu-links {
@@ -2459,11 +2440,14 @@ body {
   letter-spacing: 0.01em;
   padding: 10px 18px;
   border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .menu-links a:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  color: #ff3366;
+  transform: translateX(8px);
+  text-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
 }
 
 body.menu-open {
